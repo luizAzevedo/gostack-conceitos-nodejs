@@ -27,35 +27,23 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
   Método DELETE (deletar repositório): http://localhost:3333/repositories/dc084a6b-33c3-4720-894f-eb765d27670a,
 
   Método POST (criar repositório): http://localhost:3333/repositories,
-
-      		Colocar no body:
-
-          {
-
-      				"url": "https://github.com/Rocketseat/umbriel",
-
-              "title": "Umbriel",
-
-              "techs": ["Node", "Express", "TypeScript"]
-
-      		}
+    Colocar no body:
+    {
+      "url": "https://github.com/Rocketseat/umbriel",
+      "title": "Umbriel",
+      "techs": ["Node", "Express", "TypeScript"]
+    }
 
 
   Método POST (incrementar like): http://localhost:3333/repositories/dc084a6b-33c3-4720-894f-eb765d27670a/like,
   Método PUT (atualizar repositório): http://localhost:3333/repositories/dc084a6b-33c3-4720-894f-eb765d27670a,
+    Colocar no body: 
+    {
+      "url": "https://github.com/Rocketseat/umbriel",
+      "title": "Unform",
+      "techs": ["React", "ReactNative", "TypeScript", "ContextApi"]
+    }
 
-      		Colocar no body: 
-
-          {
-
-      				"url": "https://github.com/Rocketseat/umbriel",
-
-              "title": "Unform",
-
-              "techs": ["React", "ReactNative", "TypeScript", "ContextApi"]
-
-      		}
-          
 
 # Rota / Recurso
 ## Métodos HTTP:

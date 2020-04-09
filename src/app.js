@@ -8,7 +8,6 @@ app.use(express.json());
 app.use(cors());
 
 const repositories = [];
-var likeCounter = 0;
 
 function logRequests(request, response, next) {
   const { method, url } = request;
@@ -66,14 +65,12 @@ app.put('/repositories/:id', (request, response) => {
     return response.status(400).json({ error: 'Repository not found.' });
   }
 
-  // const { likes } = repositories[repositoryIndex];
-
   const repository = {
     id,
     title,
     url,
     techs,
-    likes : 0,
+    likes : repositories[repositoryIndex].likes,
   };
 
   repositories[repositoryIndex] = repository;
@@ -108,24 +105,9 @@ app.post('/repositories/:id/like', (request, response) => {
     return response.status(400).json({ error: 'Repository not found.' });
   }
 
-  const { title, url, techs, likes } = repositories[repositoryIndex];
+  repositories[repositoryIndex].likes += 1;
 
-  likeCounter = likeCounter + 1
-
-  console.log(likeCounter);
-  console.log(likes);
-
-  const repository = {
-    id,
-    title,
-    url,
-    techs,
-    likes: likeCounter,
-  };
-
-  console.log(repository);
-
-  return response.json(repository);
+  return response.json(repositories[repositoryIndex]);
 });
 
 module.exports = app;
